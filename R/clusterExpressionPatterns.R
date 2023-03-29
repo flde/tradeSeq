@@ -123,6 +123,8 @@
   
   yhatPatScaled <- t(scale(t(yhatPat)))
   
+  return(yhatPatScaled)
+  
   rsec <- clusterExperiment::RSEC(t(yhatPatScaled), transFun = NULL, 
                                   isCount = FALSE, reduceMethod = reduceMethod,
                                   nReducedDims = nReducedDims, 
