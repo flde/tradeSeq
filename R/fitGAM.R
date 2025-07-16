@@ -508,7 +508,6 @@ setMethod(f = "fitGAM",
                                 sce = TRUE,
                                 family = "nb",
                                 gcv = FALSE, 
-                                knotList = NULL, 
                                 knotList = NULL){
 
             if (is.null(counts)) stop("Provide expression counts using counts",
@@ -675,7 +674,8 @@ setMethod(f = "fitGAM",
                                 control = mgcv::gam.control(),
                                 sce = TRUE,
                                 family = "nb",
-                                gcv = FALSE){
+                                gcv = FALSE, 
+                                knotList = NULL){
           if (is.null(counts@int_metadata$slingshot) & 
               is.null(colData(counts)$slingshot)) {
             stop(paste0("For now tradeSeq only works downstream of slingshot ",
