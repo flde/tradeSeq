@@ -507,7 +507,8 @@ setMethod(f = "fitGAM",
                                 control = mgcv::gam.control(),
                                 sce = TRUE,
                                 family = "nb",
-                                gcv = FALSE){
+                                gcv = FALSE, 
+                                knotList = NULL){
 
             if (is.null(counts)) stop("Provide expression counts using counts",
                                       " argument.")
