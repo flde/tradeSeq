@@ -249,7 +249,6 @@
 
   ## Get the knots
   knotList <- .findKnots(nknots, pseudotime, wSamp)
-  return(knotList)
 
   ## fit NB GAM
   ### Actually fit the model ----
