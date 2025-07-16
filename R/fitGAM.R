@@ -215,8 +215,7 @@
       BPPARAM$progressbar = TRUE
     }
   }
-
-
+  
   # Convert pseudotime and weights to matrices if need be
   if (is.null(dim(pseudotime))) {
     pseudotime <- matrix(pseudotime, nrow = length(pseudotime))
@@ -249,6 +248,7 @@
 
   ## Get the knots
   knotList <- .findKnots(nknots, pseudotime, wSamp)
+  print(knotList)
 
   ## fit NB GAM
   ### Actually fit the model ----
