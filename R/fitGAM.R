@@ -247,7 +247,7 @@
   }
 
   ## Get the knots if not provided
-  if(is.null(knotList) {
+  if(is.null(knotList)) {
     
     knotList <- .findKnots(nknots, pseudotime, wSamp)
     
