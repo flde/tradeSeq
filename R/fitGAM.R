@@ -247,11 +247,18 @@
   }
 
   ## Get the knots if not provided
+  print(knotList)
+  
   if(is.null(knotList)) {
     
     knotList <- .findKnots(nknots, pseudotime, wSamp)
     
+  } else {
+
+    knotList <- knotList
+
   }
+  
   print(knotList)
 
   ## fit NB GAM
