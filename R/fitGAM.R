@@ -186,7 +186,7 @@
                     weights = NULL, offset = NULL, nknots = 6, verbose = TRUE,
                     parallel = FALSE, BPPARAM = BiocParallel::bpparam(),
                     aic = FALSE, control = mgcv::gam.control(), sce = TRUE,
-                    family = "nb", gcv = FALSE){
+                    family = "nb", gcv = FALSE, knotList=NULL){
   
   if(!is.null(conditions)){
     message("Fitting lineages with multiple conditions. This method has ",
@@ -246,8 +246,12 @@
     U <- matrix(rep(1, nrow(pseudotime)), ncol = 1)
   }
 
-  ## Get the knots
-  knotList <- .findKnots(nknots, pseudotime, wSamp)
+  ## Get the knots if not provided
+  if(is.null(knotList) {
+    
+    knotList <- .findKnots(nknots, pseudotime, wSamp)
+    
+  }
   print(knotList)
 
   ## fit NB GAM
