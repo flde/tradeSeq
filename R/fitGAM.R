@@ -581,7 +581,8 @@ setMethod(f = "fitGAM",
                                  control = control,
                                  sce = sce,
                                  family = family,
-                                 gcv = gcv)
+                                 gcv = gcv, 
+                                 knotList = knotList)
 
             # old behaviour: return list
             if (!sce) {
@@ -655,7 +656,8 @@ setMethod(f = "fitGAM",
                                 control = control,
                                 sce = sce,
                                 family = family,
-                                gcv = gcv)
+                                gcv = gcv, 
+                                knotList = knotList)
             return(gamOutput)
           }
 )
@@ -720,7 +722,8 @@ setMethod(f = "fitGAM",
                               control = control,
                               sce = sce,
                               family = family,
-                              gcv = gcv)
+                              gcv = gcv, 
+                              knotList = knotList)
 
           # tradeSeq gene-level info
           geneInfo <- SummarizedExperiment::rowData(gamOutput)$tradeSeq
