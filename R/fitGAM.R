@@ -508,6 +508,7 @@ setMethod(f = "fitGAM",
                                 sce = TRUE,
                                 family = "nb",
                                 gcv = FALSE, 
+                                knotList = NULL, 
                                 knotList = NULL){
 
             if (is.null(counts)) stop("Provide expression counts using counts",
@@ -629,7 +630,8 @@ setMethod(f = "fitGAM",
                                 control = mgcv::gam.control(),
                                 sce = TRUE,
                                 family = "nb",
-                                gcv = FALSE){
+                                gcv = FALSE, 
+                                knotList = NULL){
             
             gamOutput <- fitGAM(counts = as.matrix(counts),
                                 conditions = conditions,
